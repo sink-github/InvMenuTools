@@ -30,15 +30,15 @@ class TestMenu extends BaseMenu {
     }
 
     public function getName(): string{
-
+         return "Test";
     }
 
     public function getInventoryId(): string{
-    
+         return InvMenuTypeIds::TYPE_DOUBLE_CHEST;
     }
 
     public function getListener(InvMenuTransaction $transaction): InvMenuTransactionResult{
-    
+         return $transaction->discard();
     }
 
 }
