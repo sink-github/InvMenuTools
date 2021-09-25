@@ -65,5 +65,16 @@ $menu->setListener(function (InvMenuTransaction $transaction): InvMenuTransactio
 });
 ```
 
+> If I wanted to send it to the player (Assuming ``$player`` is referring to the ``pocketmine\player\Player`` class), you would write:
+
+```php
+$menu = new TestMenu($player);
+$menu->send($player);
+```
+
+## What would this be used for?
+
+> To be honest, it would be helpful for updating your inventory on a tick in a cleaner manner.
+
 
 
