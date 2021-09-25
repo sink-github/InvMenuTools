@@ -6,6 +6,7 @@ use Closure;
 use muqsit\invmenu\InvMenu;
 use muqsit\invmenu\transaction\InvMenuTransaction;
 use muqsit\invmenu\transaction\InvMenuTransactionResult;
+use pocketmine\scheduler\TaskScheduler;
 use Sink\InvMenuTools\Loader;
 use pocketmine\player\Player;
 use Sink\InvMenuTools\utils\Collection;
@@ -42,8 +43,12 @@ abstract class BaseMenu {
         $this->menu->send($player, $this->getName(), Closure::fromCallable([$this, "registerTicking"]));
     }
 
+    public function getScheduler(): TaskScheduler{
+        return Loader::getInstance()->getScheduler();
+    }
+
     public function registerTicking(): void{
-        Loader::getInstance()->getScheduler()->scheduleRepeatingTask($this->task = new ClosureTask(function(): void{
+        $this->getScheduler()->scheduleRepeatingTask($this->task = new ClosureTask(function(): void{
             if(!$this->player->isOnline()){
                 $this->task->getHandler()->cancel();
                 return;
