@@ -19,7 +19,7 @@
 
 ```php
 <?php
-use niggertoday\menu\BaseMenu;
+use Sink\InvMenuTools\menu\BaseMenu;
 ```
 
 
