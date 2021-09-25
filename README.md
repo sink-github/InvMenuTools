@@ -50,6 +50,7 @@ class TestMenu extends BaseMenu {
 ```
 
 > Now, if we were using InvMenu's virion itself and not making any use of this plugin, the code above would translate to:
+> 
 > Note: Assume ``$scheduler`` was referring to the ``pocketmine\scheduler\TaskScheduler`` class.
 
 ```php
