@@ -74,7 +74,7 @@ $menu->send($player);
 
 ## What would this be used for?
 
-> To be honest, it would be helpful for updating your inventory on a tick in a cleaner manner.
+> To be honest, it would be helpful for updating your inventory on each tick in a cleaner manner.
 
 
 
