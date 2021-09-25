@@ -19,7 +19,8 @@
 
 ```php
 <?php
-use niggertoday\menu\BaseMenu;```
+use niggertoday\menu\BaseMenu;
+```
 
 
 
