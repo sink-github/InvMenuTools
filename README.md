@@ -19,14 +19,19 @@
 
 ```php
 <?php
+
 use Sink\InvMenuTools\menu\BaseMenu;
+use pocketmine\item\VanillaItems;
+use muqsit\invmenu\type\InvMenuTypeIds;
+use muqsit\invmenu\transaction\InvMenuTransaction;
+use muqsit\invmenu\transaction\InvMenuTransactionResult;
 
 // these functions are necessary to put in
 
 class TestMenu extends BaseMenu {
     
     public function onUpdate(): void{
-   
+         $this->getInventory()->setItem(0, VanillaItems::DIRT());
     }
 
     public function getName(): string{
@@ -42,6 +47,21 @@ class TestMenu extends BaseMenu {
     }
 
 }
+```
+
+> Now, if we were using InvMenu's virion itself and not making any use of this plugin, the code above would translate to:
+> Note: Assume ``$scheduler`` was referring to the ``pocketmine\scheduler\TaskScheduler`` class.
+
+```php
+$menu = InvMenu::create(InvMenuTypeIds::TYPE_DOUBLE_CHEST);
+$inv = $menu->getInventory();
+$scheduler->scheduleRepeatingTask(new ClosureTask(function (): void{
+     $inv->setItem(0, VanillaItems::DIRT());
+});
+$menu->setName("Test");
+$menu->setListener(function (InvMenuTransaction $transaction): InvMenuTransactionResult{
+     return $transaction->discard();
+});
 ```
 
 
