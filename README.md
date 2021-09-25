@@ -20,8 +20,29 @@
 ```php
 <?php
 use Sink\InvMenuTools\menu\BaseMenu;
-```
 
+// these functions are necessary to put in
+
+class TestMenu extends BaseMenu {
+    
+    public function onUpdate(): void{
+   
+    }
+
+    public function getName(): string{
+
+    }
+
+    public function getInventoryId(): string{
+    
+    }
+
+    public function getListener(InvMenuTransaction $transaction): InvMenuTransactionResult{
+    
+    }
+
+}
+```
 
 
 
