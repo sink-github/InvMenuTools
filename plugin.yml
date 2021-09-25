@@ -1,0 +1,5 @@
+name: InvMenuTools
+version: 1.0.0
+api: 4.0.0
+main: Sink\InvMenuTools\Loader
+author: Sink
