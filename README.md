@@ -15,7 +15,7 @@
 
 ## Usage
 
-> You'll need to import the ``Sink\InvMenuTools\menu\BaseMenu`` class. You'll need to use this class to extend into your child class so you can use that child class to send an inventory to any player, like so:
+> You'll need to import the ``Sink\InvMenuTools\menu\BaseMenu`` class. You'll need to use this class to extend into your child class so you can use that child class to send an inventory to any player.
 
 ```php
 <?php
