@@ -3,17 +3,14 @@
 namespace Sink\InvMenuTools;
 
 use pocketmine\plugin\PluginBase;
+use pocketmine\utils\SingletonTrait;
 
 class Loader extends PluginBase {
 
-    protected static Loader $instance;
+    use SingletonTrait;
 
     protected function onLoad(): void{
-        self::$instance = $this;
-    }
-
-    public static function getInstance(): Loader{
-        return self::$instance;
+        self::setInstance($this);
     }
 
 }
